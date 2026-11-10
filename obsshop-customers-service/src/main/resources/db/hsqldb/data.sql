@@ -1,0 +1,31 @@
+INSERT INTO types VALUES (1, 'Electronics');
+INSERT INTO types VALUES (2, 'Accessories');
+INSERT INTO types VALUES (3, 'Gaming');
+INSERT INTO types VALUES (4, 'Home');
+INSERT INTO types VALUES (5, 'Office');
+INSERT INTO types VALUES (6, 'Audio');
+
+INSERT INTO owners VALUES (1, 'George', 'Franklin', '110 W. Liberty St.', 'Madison', '6085551023');
+INSERT INTO owners VALUES (2, 'Betty', 'Davis', '638 Cardinal Ave.', 'Sun Prairie', '6085551749');
+INSERT INTO owners VALUES (3, 'Eduardo', 'Rodriquez', '2693 Commerce St.', 'McFarland', '6085558763');
+INSERT INTO owners VALUES (4, 'Harold', 'Davis', '563 Friendly St.', 'Windsor', '6085553198');
+INSERT INTO owners VALUES (5, 'Peter', 'McTavish', '2387 S. Fair Way', 'Madison', '6085552765');
+INSERT INTO owners VALUES (6, 'Jean', 'Coleman', '105 N. Lake St.', 'Monona', '6085552654');
+INSERT INTO owners VALUES (7, 'Jeff', 'Black', '1450 Oak Blvd.', 'Monona', '6085555387');
+INSERT INTO owners VALUES (8, 'Maria', 'Escobito', '345 Maple St.', 'Madison', '6085557683');
+INSERT INTO owners VALUES (9, 'David', 'Schroeder', '2749 Blackhawk Trail', 'Madison', '6085559435');
+INSERT INTO owners VALUES (10, 'Carlos', 'Estaban', '2335 Independence La.', 'Waunakee', '6085555487');
+
+INSERT INTO pets VALUES (1, 'Order #1001', '2024-09-07', 1, 1);
+INSERT INTO pets VALUES (2, 'Order #1002', '2024-08-06', 6, 2);
+INSERT INTO pets VALUES (3, 'Order #1003', '2024-04-17', 2, 3);
+INSERT INTO pets VALUES (4, 'Order #1004', '2024-03-07', 2, 3);
+INSERT INTO pets VALUES (5, 'Order #1005', '2024-11-30', 3, 4);
+INSERT INTO pets VALUES (6, 'Order #1006', '2024-01-20', 4, 5);
+INSERT INTO pets VALUES (7, 'Order #1007', '2024-09-04', 1, 6);
+INSERT INTO pets VALUES (8, 'Order #1008', '2024-09-04', 1, 6);
+INSERT INTO pets VALUES (9, 'Order #1009', '2024-08-06', 5, 7);
+INSERT INTO pets VALUES (10, 'Order #1010', '2024-02-24', 2, 8);
+INSERT INTO pets VALUES (11, 'Order #1011', '2024-03-09', 5, 9);
+INSERT INTO pets VALUES (12, 'Order #1012', '2024-06-24', 2, 10);
+INSERT INTO pets VALUES (13, 'Order #1013', '2024-06-08', 1, 10);

@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
+  cloud:
+    gateway:
+      server:
+        webflux:
+          default-filters:
+            - name: CircuitBreaker
+              args:
+                name: defaultCircuitBreaker
+                fallbackUri: forward:/fallback
+            - name: Retry
+              args:
+                retries: 1
+                statuses: SERVICE_UNAVAILABLE
+                methods: POST
+          routes:
+            - id: products-service
+              uri: lb://products-service
+              predicates:
+                - Path=/api/vet/**
+              filters:
+                - StripPrefix=2
+            - id: orders-service
+              uri: lb://orders-service
+              predicates:
+                - Path=/api/visit/**
+              filters:
+                - StripPrefix=2
+            - id: customers-service
+              uri: lb://customers-service
+              predicates:
+                - Path=/api/customer/**
+              filters:
+                - StripPrefix=2
+            - id: genai-service
+              uri: lb://genai-service
+              predicates:
+                - Path=/api/genai/**
+              filters:
+                - StripPrefix=2
+                - CircuitBreaker=name=genaiCircuitBreaker,fallbackUri=/fallback
+  reactor:
+    context-propagation: auto
+management:
+  tracing:
+    sampling:
+      probability: 0.0
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:http://config-server:8888
